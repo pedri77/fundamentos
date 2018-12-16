@@ -1,0 +1,377 @@
+/* Variables */
+
+:root {
+    --color-texto: rgb(0, 0, 0);
+    --color-fondo: white; 
+    --color-boton: black;
+    --color-sombra: #0E315C;
+    --color-activo: #F7B801;
+    --color-header: #F35B04;
+    --color-filas: #7678ED;
+}
+
+/* Elementos genéricos */
+
+body {
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.menu-hide {
+    display: none;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.text-center {
+    text-align:center;
+}
+
+/* Añadimos para que se habilite el poder visualizar una tabla entera en cualquier dispositivo */
+
+.overflowed {
+    overflow-x: auto;
+}
+
+.align-left {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+}
+
+figure {
+    width: 50%;
+    margin: auto;
+}
+
+.blue {
+    color: var(--color-header);
+}
+
+/* Elementos iniciales: Header y Nav */
+
+.top-wrapper header {
+    color: var(--color-fondo);
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    left: 20%;
+    width: 50%;
+}
+
+/* Menus */
+
+nav a {
+    display: block;
+    padding: .5rem 1rem;
+    transition: all 0.8s linear;
+}
+
+.top-wrapper nav {
+    color: var(--color-fondo);
+    position: absolute;
+    z-index: 1;
+}
+
+nav.menu-icon {
+    font-size: 1.2rem;
+    right: 20%;
+    top: 1rem;
+    font-weight: 800;
+}
+
+nav.menu-top {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    left: 2%;
+    top: 3rem;
+    font-weight: 800;  
+    color: var(--color-sombra);
+    background-color: var(--color-fondo);
+    width: 100%;
+}
+
+nav.menu-bottom {
+    background-color: var(--color-sombra);
+    display: none;
+}
+
+/* Menu de Iconos sociales */
+
+footer nav li {
+    display: inline-block;
+}
+
+/* Tablas */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: var(--color-filas);
+}
+
+th {
+    background-color: var(--color-header);
+    color: var(--color-fondo)
+}
+
+/* Botones*/
+
+section .boton {
+    display: block;
+    color: var(--color-fondo);
+    background-color: var(--color-boton);
+    font-size: 14px;
+    font-weight: 800;
+    padding: 15px 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 0;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif; 
+}
+
+/* Secciones */ 
+
+section h1 {font-size: 3rem;}
+
+/* La portada con imagen de fondo */
+
+section#home header {
+    height: 100vh; 
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /* color: var(--color-fondo); */
+    position: relative;
+    background-image: url(../assets/abstract-2468874_640.jpg);
+}
+
+section#home header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color-texto);
+    opacity: 0.5;
+}
+
+/* Normales */
+
+.section-header {
+    height: 150px;
+    color: var(--color-fondo);
+    position: relative;
+    background-color: var(--color-header);
+    opacity: 0.5;
+}
+
+/* Wrappers de section */
+ 
+.top-wrapper header h1 { 
+    font-size: 1.25rem;
+}
+
+.content-wrapper p {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+section .title-wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+section .content-wrapper, nav.content-wrapper {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Section HOME */
+
+section#home header h1 {
+    font-size: 0.2rem;
+    margin-bottom: 2rem; 
+    display: inline-block;
+    animation: titulo 3s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes titulo {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    20% {
+      transform: scale(2);
+      opacity: 0.2;
+    }
+    40% {
+      transform: scale(4);
+      opacity: 0.4;
+    }
+    60% {
+      transform: scale(6);
+      opacity: 0.6;
+    }
+    80% {
+      transform: scale(8);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(10);
+      opacity: 1;
+    }
+  }
+
+/* Section QUIEN SOY */
+
+.imagen-mia {
+    margin: auto;
+    /* cambia estos dos valores para definir el tamaño de tu círculo */
+    height: 400px;
+    width: 320px;
+    /* los siguientes valores son independientes del tamaño del círculo */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+    background-image: url(https://www.disenowebwordpress.com/wp-content/uploads/2018/01/David-Moya.jpg);
+}
+
+/* Section CONTACTO */
+
+section#contacto p {
+    line-height: 1.5;
+    margin: 1.8rem 0; 
+}
+
+section#contacto ul {
+    margin-bottom: 1rem;
+}
+
+section#contacto li {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-sombra);
+    
+}
+
+section#contacto li.form-group label {
+    display: none;
+}
+
+section#contacto li.form-group input, 
+section#contacto li.form-group select,
+section#contacto li.form-group textarea {
+    width: 100%;
+    border: 0px solid;
+    font-size: 1.5rem;
+    font-family: 'Lora', serif;
+    color:  var(--color-sombra);
+}
+
+section#contacto li.form-group select {
+    background-color: var(--color-fondo);
+}
+
+/* Footer*/
+
+body>footer {
+    margin-top: 2rem;
+    border-top: 1px solid var(--color-sombra);
+    padding-top: 3rem;
+    text-align: center;
+}
+
+body>footer nav {
+    font-size: .8rem;
+}
+
+body>footer small {
+    color: var(--color-sombra);
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 900px) {
+
+    .menu-hide {
+        display: initial;
+    }
+
+    nav.menu-icon {
+        display: none;
+    }
+
+    .top-wrapper {
+        display: flex;
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        justify-content: space-around;
+        align-items: baseline;
+        color: var(--color-fondo);
+        background-color: var(--color-header)
+    }
+
+    .top-wrapper header {
+        position: static;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    nav.menu-top {
+        position: static;
+        width: auto;
+        color: inherit;
+        background-color: inherit;
+    }
+
+    nav.menu-top li {
+        display: inline-block;
+    }    
+
+    nav.menu-top a:hover {
+        color: antiquewhite;
+        background-color: var(--color-sombra);
+        transform: scale(1.2);
+      }
+
+    section .content-wrapper, nav.content-wrapper {
+        width: 75%;
+        max-width: 60rem;
+        margin-top: 2rem;
+    }
+
+    .active {
+        color: var(--color-activo);
+    }
+}
